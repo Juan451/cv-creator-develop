@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="Description" content="Put your description here." />
+    <base href="/" />
+    <!-- include bundle and styles in html file -->
+    <script
+      type="text/javascript"
+      charset="utf-8"
+      src="node_modules/@kor-ui/kor/index.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/@kor-ui/kor/kor-styles.css"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="/node_modules/axios/dist/axios.min.js"></script>
+
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        max-width: 1600px;
+
+        height: 900px;
+        min-width: 1280px;
+        margin: 0 auto;
+        background: rgb(244, 184, 82);
+        background: linear-gradient(
+          36deg,
+          rgba(244, 184, 82, 1) 40%,
+          rgba(244, 93, 80, 1) 79%,
+          rgba(0, 146, 255, 1) 100%
+        );
+        padding: 2rem 0;
+      }
+    </style>
+
+    <script>
+      // Load and register pre-caching Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js', {
+            scope: '/',
+          });
+        });
+      }
+
+      // Redux assumes `process.env.NODE_ENV` exists in the ES module build.
+      // https://github.com/reactjs/redux/issues/2907
+      window.process = { env: { NODE_ENV: 'production' } };
+    </script>
+
+    <title>cv-creator</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <cv-creator></cv-creator>
+    </div>
+    <script type="module" src="./src/cv-creator.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tomickigrzegorz/circular-progress-bar@1.1.9/dist/circularProgressBar.min.js"></script>
+  </body>
+</html>
