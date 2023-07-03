@@ -58,7 +58,9 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.60.0",
     "rollup-plugin-esbuild": "^5.0.0",
-    "rollup-plugin-workbox": "^6.2.0"
+    "rollup-plugin-workbox": "^6.2.0",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
   },
   "eslintConfig": {
     "extends": [
